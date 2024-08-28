@@ -1,8 +1,8 @@
-#Author :  Zamin Ali 
-#Project: This is a mini project that does some calculations
-#Libraries used : "math"
-#number of operations included : 12
-#GUI based : No (runs on terminal only)
+# Author: Zamin Ali
+# Project: This is a mini project that does some calculations and conversions
+# Libraries used: "math"
+# Number of operations included: 18
+# GUI based: No (runs on terminal only)
 
 import math
 
@@ -17,7 +17,7 @@ def multiply(x, y):
 
 def divide(x, y):
     if y == 0:
-        return "Division by zero is not allowed !"
+        return "Division by zero is not allowed!"
     return x / y
 
 def power(x, y):
@@ -46,12 +46,30 @@ def cosine(x):
 def tangent(x):
     return math.tan(math.radians(x))
 
+def currency_conversion(amount, rate):
+    return amount * rate
+
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+
+def fahrenheit_to_celsius(fahrenheit):
+    return (fahrenheit - 32) * 5/9
+
+def meters_to_kilometers(meters):
+    return meters / 1000
+
+def kilometers_to_miles(kilometers):
+    return kilometers * 0.621371
+
+def miles_to_kilometers(miles):
+    return miles / 0.621371
+
 def calculator():
     print("Welcome to my Calculator!")
-    print("here you can perform multiple operations")
+    print("Here you can perform multiple operations and conversions.")
     
     while True:
-        print("Choose an operation:")
+        print("\nChoose an operation:")
         print("1. Addition (+)")
         print("2. Subtraction (-)")
         print("3. Multiplication (*)")
@@ -64,11 +82,17 @@ def calculator():
         print("10. Sine (sin)")
         print("11. Cosine (cos)")
         print("12. Tangent (tan)")
-        print("13. Exit")
+        print("13. Currency Conversion")
+        print("14. Celsius to Fahrenheit")
+        print("15. Fahrenheit to Celsius")
+        print("16. Meters to Kilometers")
+        print("17. Kilometers to Miles")
+        print("18. Miles to Kilometers")
+        print("19. Exit")
         
-        choice = input("\nEnter your choice (1-13): ")
+        choice = input("\nEnter your choice (1-19): ")
         
-        if choice == '13':
+        if choice == '19':
             print("Thank you for using the calculator! Goodbye.")
             break
 
@@ -112,9 +136,9 @@ def calculator():
             result = factorial(num)
             print(f"\n{num}! = {result}")
 
-        elif (choice == '10'):
+        elif choice == '10':
             num = float(input("Enter the angle in degrees: "))
-            result = sine(num)                              
+            result = sine(num)
             print(f"\nsin({num}°) = {result}")
 
         elif choice == '11':
@@ -127,7 +151,39 @@ def calculator():
             result = tangent(num)
             print(f"\ntan({num}°) = {result}")
 
+        elif choice == '13':
+            amount = float(input("Enter the amount to convert: "))
+            rate = float(input("Enter the conversion rate: "))
+            result = currency_conversion(amount, rate)
+            print(f"\nConverted amount = {result}")
+
+        elif choice == '14':
+            celsius = float(input("Enter the temperature in Celsius: "))
+            result = celsius_to_fahrenheit(celsius)
+            print(f"\n{celsius}°C = {result}°F")
+
+        elif choice == '15':
+            fahrenheit = float(input("Enter the temperature in Fahrenheit: "))
+            result = fahrenheit_to_celsius(fahrenheit)
+            print(f"\n{fahrenheit}°F = {result}°C")
+
+        elif choice == '16':
+            meters = float(input("Enter the distance in meters: "))
+            result = meters_to_kilometers(meters)
+            print(f"\n{meters} meters = {result} kilometers")
+
+        elif choice == '17':
+            kilometers = float(input("Enter the distance in kilometers: "))
+            result = kilometers_to_miles(kilometers)
+            print(f"\n{kilometers} km = {result} miles")
+
+        elif choice == '18':
+            miles = float(input("Enter the distance in miles: "))
+            result = miles_to_kilometers(miles)
+            print(f"\n{miles} miles = {result} km")
+
         else:
-            print("Invalid input. Please enter a valid choice (1-13).")
-#To start the calculator
+            print("Invalid input. Please enter a valid choice (1-19).")
+
+# To start the calculator
 calculator()
