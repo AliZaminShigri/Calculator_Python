@@ -114,7 +114,7 @@ def calculator():
 
         elif (choice == '10'):
             num = float(input("Enter the angle in degrees: "))
-            result = sine(num)
+            result = sine(num)                              
             print(f"\nsin({num}°) = {result}")
 
         elif choice == '11':
