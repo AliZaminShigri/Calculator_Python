@@ -1,4 +1,4 @@
-#Team Members:  Zamin Ali and Syed Danial Hasnain
+#Author :  Zamin Ali 
 #Project: This is a mini project that does some calculations
 #Libraries used : "math"
 #number of operations included : 12
